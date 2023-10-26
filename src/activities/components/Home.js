@@ -15,7 +15,7 @@ export default function Home() {
 
     React.useEffect(()=>{
         setLoading(true);
-        axios.get(`http://localhost:4000/getActivities?currentPage=${currentPage-1}`,{withCredentials:false})
+        axios.get(`https://galaxy-exhibitions-activities.onrender.com/getActivities?currentPage=${currentPage-1}`,{withCredentials:false})
         .then((res)=>{
             console.log(res)
             dispatch(setItems(res?.data?.data.response))
