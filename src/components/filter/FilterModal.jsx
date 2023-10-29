@@ -2,7 +2,6 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import secureLocalStorage from 'react-secure-storage';
-import Calendar from '../calendar/Calendar';
 import CircularProgress from '@mui/material/CircularProgress';
 
 import { RxCross2 } from "react-icons/rx";
@@ -84,11 +83,12 @@ export default function FilterModal() {
               </div>
               <div className='mt-3 border-[#ccc] border rounded-md'>
                 <SearchWithSelect type="project"/>
-              </div>            
-              <div className='mt-3 flex  rounded-md border-[#ccc] border'>
-                <p className='h-[32px] px-2 leading-[32px] border-r border-[#ccc] w-[80px]'>Daterange</p>
-                <Calendar type="apiFilter"/>
-              </div>
+              </div>  
+              {/* <select name="" id="" value={language} onChange={(e)=>setLanguage(e.target.value)} className='border rounded-sm px-2 h-[34px] cursor-pointer outline-none text-[14px] w-[200px]'>
+              <option value=''>English & Arabic</option>
+              <option>English</option>
+              <option>Arabic</option>
+                </select>           */}
               <div className='flex h-[32px]  border-[#ccc] border rounded-md items-center cursor-pointer text-[13px] mt-3'>
                 <p className='h-[32px] px-2 leading-[32px] border-r w-[80px] grow-0 shrink-0'>Spam</p>
                 <div className='flex items-stretch h-[28px] w-full text-center px-[1px]'>
