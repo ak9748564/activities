@@ -25,7 +25,7 @@ export default function Home() {
 
   const getActivities = () => {
     setLoading(true);
-        axios.get(`http://galaxy-exhibitions-activities.onrender.com/getActivities?searchText=${searchParam}&currentPage=${currentPage-1}`,{withCredentials:false})
+        axios.get(`https://galaxy-exhibitions-activities.onrender.com/getActivities?searchText=${searchParam}&currentPage=${currentPage-1}`,{withCredentials:false})
         .then((res)=>{
             console.log(res)
             setI(res?.data?.data.response)
@@ -37,7 +37,7 @@ export default function Home() {
 
     React.useEffect(()=>{
         setLoading(true);
-        axios.get(`http://galaxy-exhibitions-activities.onrender.com/getActivities?searchText=${searchParam}&currentPage=${currentPage-1}`,{withCredentials:false})
+        axios.get(`https://galaxy-exhibitions-activities.onrender.com/getActivities?searchText=${searchParam}&currentPage=${currentPage-1}`,{withCredentials:false})
         .then((res)=>{
             console.log(res)
             setI(res?.data?.data.response)
