@@ -430,7 +430,7 @@ export default function Activities() {
             </div>
         </div>
         <div className={ activity === '' ? 'hidden' : 'absolute w-full h-full bg-black/80 top-0 left-0 flex items-center justify-center transition-all' }>
-            <div className="rounded-md shadow-lg p-4 relative w-[90%] h-[90%] bg-[#F5F5F5] overflow-y-scroll" ref={detailsModalRef}>
+            <div className="rounded-md shadow-lg relative w-[90%] h-[90%] bg-[#F5F5F5] overflow-y-scroll" ref={detailsModalRef}>
               
                 <div className='w-full border rounded-md shadow-lg bg-white p-4'>
     
