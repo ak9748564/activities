@@ -38,12 +38,12 @@ export default function ActivityGroupFilter({
                         <div className='border p-2 rounded-sm'>
                             {
                                 activityGroup?.filter((item)=>{
-                                    return item['Activity Group']?.toString()?.toLowerCase().includes(searchString)
+                                    return item?.toString()?.toLowerCase().includes(searchString)
                                 })?.map((item)=>{
                                     return(
                                         <p className='leading-[36px] text-[14px] px-2 border-b ellipsis hover:bg-[#eee] cursor-pointer'
-                                        onClick={()=>setActivityGroupSelected(item['Activity Group'])}>
-                                            {item['Activity Group']}
+                                        onClick={()=>setActivityGroupSelected(item)} key={item}>
+                                            {item}
                                         </p>
                                     )
                                 })
