@@ -96,7 +96,7 @@ export default function Activities() {
             phone:form.phone,
             message:form.message,
             activity:form.activity
-        })
+        },{withCredentials:false})
         .then(res=>console.log(res))
         .catch(err=>console.log(err))        
     }
