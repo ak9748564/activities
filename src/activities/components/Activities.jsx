@@ -552,7 +552,7 @@ export default function Activities() {
                         <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Documents Required</p>
                         <p className='text-[14px] leading-[30px]'>{activity['Documents Required']}</p>
                     </div>
-                    <div className='flex items-center'>
+                    <div className='flex items-center gap-2'>
                         <div className='grow shrink h-0 border-b border-dashed'></div>
                         <p className='grow-0 shrink-0'>Enquire About This Activity</p>
                         <div className='grow shrink h-0 border-b border-dashed'></div>
