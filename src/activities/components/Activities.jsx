@@ -64,7 +64,10 @@ export default function Activities() {
             axios.get(`https://galaxy-exhibitions-activities.onrender.com/getActivitiesGroup`,{withCredentials:false})
             .then((res)=>{
                 // console.log(res?.data?.data)
-                setActivityGroup(res?.data?.data);
+                let uniqueArr = res?.data?.data.map((item)=>item['Activity Group']);
+                let uniqueGroup = new Set(uniqueArr)
+                // console.log(uniqueGroup)
+                setActivityGroup([...uniqueGroup]);
                 // setLoading(false)
             }).catch((err)=>{
                 console.log(err);
