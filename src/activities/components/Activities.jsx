@@ -8,6 +8,7 @@ import ItemsCount from '../../components/pagination/ItemsCount';
 import PageNumbers from '../../components/pagination/Pagenumbers';
 import { CircularProgress } from '@mui/material';
 import ActivityGroupFilter from '../../components/filter/ActivityGroupFilter';
+import { BASE_URL_ACT } from '../../redux/constants';
 
 export default function Activities() {
     //click outside to close
@@ -37,6 +38,7 @@ export default function Activities() {
     const [filters,setFilters] = React.useState(false);
 
     const [loading,setLoading] = React.useState(false);
+    const [contactLoading,setContactLoading] = React.useState(false);
     const [items,setI] = React.useState([]);
     const [activityGroup,setActivityGroup] = React.useState([])
 
@@ -61,7 +63,7 @@ export default function Activities() {
 
     const getActivitiesGroup = () => {
         // setLoading(true);
-            axios.get(`https://galaxy-exhibitions-activities.onrender.com/getActivitiesGroup`,{withCredentials:false})
+            axios.get(`${BASE_URL_ACT}/getActivitiesGroup`,{withCredentials:false})
             .then((res)=>{
                 // console.log(res?.data?.data)
                 let uniqueArr = res?.data?.data.map((item)=>item['Activity Group']);
@@ -77,7 +79,7 @@ export default function Activities() {
 
     const getActivities = () => {
         setLoading(true);
-            axios.get(`https://galaxy-exhibitions-activities.onrender.com/getActivities?searchText=${searchParam}&currentPage=${currentPage-1}`,{withCredentials:false})
+            axios.get(`${BASE_URL_ACT}/getActivities?searchText=${searchParam}&currentPage=${currentPage-1}&zone=${zone}&licenseType=${licenseType}&isSpecial=${isSpecial}&riskClass=${riskClass}&compRR=${compRR}&activityGroup=${activityGroupSelected}`,{withCredentials:false})
             .then((res)=>{
                 console.log(res)
                 setI(res?.data?.data.response)
@@ -89,16 +91,26 @@ export default function Activities() {
     
     const handleContact = (e) => {
         e.preventDefault();
-        console.log(form)
-        axios.post('https://galaxy-exhibitions-activities.onrender.com/contact',{
+        // console.log(form)
+        setContactLoading(true)
+        axios.post(`${BASE_URL_ACT}/contact`,{
             name:form.name,
             email:form.email,
             phone:form.phone,
             message:form.message,
             activity:form.activity
         },{withCredentials:false})
-        .then(res=>console.log(res))
-        .catch(err=>console.log(err))        
+        .then(res=>{
+            // console.log(res)
+            setContactLoading(false)
+            if(res.status === 200){
+                alert(res.data.message)
+            }
+        })
+        .catch(err=>{
+            console.log(err)
+            setContactLoading(false)
+        })        
     }
 
     const handleForm = (e) => {
@@ -112,7 +124,7 @@ export default function Activities() {
     React.useEffect(()=>{
         getActivitiesGroup();
         setLoading(true);
-        axios.get(`https://galaxy-exhibitions-activities.onrender.com/getActivities?searchText=${searchParam}&currentPage=${currentPage-1}`,{withCredentials:false})
+        axios.get(`${BASE_URL_ACT}/getActivities?searchText=${searchParam}&currentPage=${currentPage-1}`,{withCredentials:false})
         .then((res)=>{
             console.log(res)
             setI(res?.data?.data.response)
@@ -130,7 +142,7 @@ export default function Activities() {
       }
     },[searchQuery])
 
-    // console.log(activity)
+    // console.log(activityGroup)
 
   return (
     <div className='w-full h-full'>
@@ -274,6 +286,8 @@ export default function Activities() {
                 <PageNumbers/>
             </div>            
         </div>
+
+        {/* filter modal  */}
         <div className={ filters ? 'absolute w-full h-full bg-black/80 top-0 left-0 flex items-center justify-center transition-all' : 'hidden' }>
         <div className="rounded-md shadow-lg p-4 relative w-full s2:w-[400px] bg-[#F5F5F5]" ref={filterModalRef}>
               
@@ -402,35 +416,34 @@ export default function Activities() {
                     </button>
                     <button 
                         className={`w-1/2 h-full leading-[26px] transition-all border-l border-r rounded-sm 
-                        ${compRR === 'Low' ? 
+                        ${compRR === 'High' ? 
                         'bg-[#24AEE4] text-white shadow-lg' : 
                         'text-black/80 border border-slate-500 shadow-inner mx-[1px]'}`} 
                         onClick={()=>setCompRR('High')}>
                         High
                     </button>
                 </div>                       
-              </div>
-                
-              {/* <div className='flex items-center border-[#ccc] border rounded-md my-3'>
-              <p className='h-[32px] px-2 leading-[32px] border-r w-[80px] grow-0 shrink-0'>Search</p>
-              <SearchFilter type="apiFilter" className="grow shrink"/>
-              </div>            */}
-              {/* <button className='text-white h-[30px] bg-black/80 hover:bg-black rounded-sm text-center w-[90px] leading-[30px] text-[13px]' onClick={''}>
+              </div>          
+              <button className='text-white h-[30px] bg-black/80 hover:bg-black rounded-sm text-center w-[90px] leading-[30px] text-[13px] mt-3'>
               {
-                refresh.refresh ? <div className='flex w-full justify-center h-full items-center'>
-                <CircularProgress            
-                size={20}
-                thickness={3}
-                value={80}
-                color={'inherit'}
-                /></div> : <div>Apply</div>
+                loading ? 
+                <div className='flex w-full justify-center h-full items-center'>
+                    <CircularProgress            
+                    size={20}
+                    thickness={3}
+                    value={80}
+                    color={'inherit'}
+                    />
+                </div> : <div  onClick={getActivities} className='w-full h-full text-center'>Apply</div>
                 }
-              </button> */}
+              </button>
               </div>
             </div>
         </div>
+
+        {/* details and enquiry modal  */}
         <div className={ activity === '' ? 'hidden' : 'absolute w-full h-full bg-black/80 top-0 left-0 flex items-center justify-center transition-all' }>
-            <div className="rounded-md shadow-lg relative w-[90%] h-[90%] bg-[#F5F5F5] overflow-y-scroll" ref={detailsModalRef}>
+            <div className="rounded-md shadow-lg p-4 relative w-[90%] h-[90%] bg-[#F5F5F5] overflow-y-scroll" ref={detailsModalRef}>
               
                 <div className='w-full border rounded-md shadow-lg bg-white p-4'>
     
@@ -440,7 +453,7 @@ export default function Activities() {
                     </div>
                     <div className='border px-3 rounded-sm my-1'>
                         <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Zone</p>
-                        <p className='text-[14px] leading-[30px]'>{activity['Z']}</p>
+                        <p className='text-[14px] leading-[30px]'>{activity['Zone']}</p>
                     </div>
                     <div className='border px-3 rounded-sm my-1'>
                         <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Activity Code</p>
@@ -555,12 +568,12 @@ export default function Activities() {
                         <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Documents Required</p>
                         <p className='text-[14px] leading-[30px]'>{activity['Documents Required']}</p>
                     </div>
-                    <div className='flex items-center gap-2'>
+                    <div className='flex items-center'>
                         <div className='grow shrink h-0 border-b border-dashed'></div>
                         <p className='grow-0 shrink-0'>Enquire About This Activity</p>
                         <div className='grow shrink h-0 border-b border-dashed'></div>
                     </div>
-                    <form onSubmit={handleContact} className='border rounded-sm mt-2 p-4'>
+                    <form onSubmit={(e)=>handleContact(e)} className='border rounded-sm mt-2 p-4'>
                         <div className='w-full'>
                             <p>Name:</p>
                             <input type="text" name='name' value={form.name} onChange={handleForm} className='h-[36px] border rounded-sm px-3 outline-none w-full'/>
@@ -578,7 +591,20 @@ export default function Activities() {
                             <textarea type="text" name='message' value={form.message} onChange={handleForm} className='h-[72px] border rounded-sm px-3 outline-none w-full'></textarea>
                         </div>
                         <div className='flex justify-end pt-2 bg-white'>
-                            <button className='bg-black text-white rounded-md leading-[30px] px-4 text-[13px]'>Send Enquiry</button>
+                            <button className='bg-black text-white rounded-md leading-[30px] px-4 text-[13px] w-[150px]'>
+                                {
+                                    contactLoading ?
+                                    <div className='flex w-full justify-center items-center h-[30px]'>
+                                        <CircularProgress            
+                                        size={20}
+                                        thickness={3}
+                                        value={80}
+                                        color={'inherit'}
+                                        />
+                                    </div> : 'Send Enquiry'
+                                }
+                                
+                            </button>
                         </div>
                     </form>
                 </div>
