@@ -30,7 +30,12 @@ export default function ActivityGroupFilter({
                         type="search" 
                         value={searchString} 
                         className='h-[36px] px-2 text-[14px] border rounded-sm w-full bg-white' 
-                        onChange={(e)=>setSearchString(e.target.value.toString().toLowerCase())}
+                        onChange={(e)=>{
+                            setSearchString(e.target.value.toString().toLowerCase())
+                            if(searchString === ''){
+                                setActivityGroupSelected('')
+                            }
+                        }}
                         placeholder='Search Any Activity Group'
                         />
                     </div>
