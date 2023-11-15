@@ -271,7 +271,7 @@ export default function Activities() {
 
     }    
     <div className='flex justify-end pt-2'>
-        <button className='bg-black text-white rounded-md leading-[30px] px-4 text-[13px]' onClick={()=>setActivity(item)}>View Details</button>
+        <button className='bg-black text-white rounded-md leading-[30px] px-4 text-[13px]' onClick={()=>setActivity(item)}>Send Enquiry</button>
     </div>
 </div>
                             )
