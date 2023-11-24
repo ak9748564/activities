@@ -218,7 +218,7 @@ export default function Activities() {
         </div> :
         <div className='border px-3 rounded-sm my-1'>
             <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Activity Group (Arabic)</p>
-            <p className='text-[14px] leading-[30px] text-blue-500'>{item['Activity Group (Arabic)']}</p>
+            <p className='text-[14px] leading-[30px] text-green-500'>{item['Activity Group (Arabic)']}</p>
         </div>
     }
     {/* Activity Name  */}
@@ -226,13 +226,13 @@ export default function Activities() {
         language === 'English' ? 
         <div className='border px-3 rounded-sm my-1'>
             <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Activity Name</p>
-            <p className='text-[14px] leading-[30px] text-blue-500'>
+            <p className='text-[14px] leading-[30px] text-green-500'>
                 {item['Activity Name']}
             </p>
         </div> :
         <div className='border px-3 rounded-sm my-1'>
             <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Activity Name (Arabic)</p>
-            <p className='text-[14px] leading-[30px]  text-blue-500'>
+            <p className='text-[14px] leading-[30px]  text-green-500'>
                 {item['Activity Name (Arabic)']}
             </p>
         </div>
@@ -242,13 +242,13 @@ export default function Activities() {
         language === 'English' ? 
         <div className='border px-3 rounded-sm my-1'>
             <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Segment Name English</p>
-            <p className='text-[14px] leading-[30px] text-blue-500'>
+            <p className='text-[14px] leading-[30px] text-green-500'>
             {item['Segment Name English']}
             </p>
         </div> :
         <div className='border px-3 rounded-sm my-1'>
             <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Segment Name Arabic</p>
-            <p className='text-[14px] leading-[30px] text-blue-500'>
+            <p className='text-[14px] leading-[30px] text-green-500'>
             {item['Segment Name Arabic']}
             </p>
         </div>
