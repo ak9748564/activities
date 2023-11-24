@@ -201,15 +201,15 @@ export default function Activities() {
                             return(
 <div className='w-full border rounded-md shadow-lg bg-white p-4 my-2'>
     
-    <div className='border px-3 rounded-sm my-1'>
+{/*     <div className='border px-3 rounded-sm my-1'>
         <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Activity Master: Activity Master Number</p>
         <p className='text-[14px] leading-[30px]'>{item['Activity Master: Activity Master Number']}</p>
-    </div>
-    <div className='border px-3 rounded-sm my-1'>
+    </div> */}
+{/*     <div className='border px-3 rounded-sm my-1'>
         <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Activity Code</p>
         <p className='text-[14px] leading-[30px]'>{item['Activity Code']}</p>
     </div>
-    {/* Activity Group  */}
+    {/* Activity Group  */} */}
     {
         language === 'English' ?
         <div className='border px-3 rounded-sm my-1'>
@@ -254,7 +254,7 @@ export default function Activities() {
         </div>
     }
     {/* License Type  */}
-    {
+{/*     {
         language === 'English' ?
         <div className='border px-3 rounded-sm my-1'>
             <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>License Type</p>
@@ -269,7 +269,7 @@ export default function Activities() {
             </p>
         </div>
 
-    }    
+    }     */}
     <div className='flex justify-end pt-2'>
         <button className='bg-black text-white rounded-md leading-[30px] px-4 text-[13px]' onClick={()=>setActivity(item)}>Send Enquiry</button>
     </div>
