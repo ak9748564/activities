@@ -208,8 +208,8 @@ export default function Activities() {
 {/*     <div className='border px-3 rounded-sm my-1'>
         <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Activity Code</p>
         <p className='text-[14px] leading-[30px]'>{item['Activity Code']}</p>
-    </div>
-    {/* Activity Group  */} */}
+    </div> */}
+    {/* Activity Group  */}
     {
         language === 'English' ?
         <div className='border px-3 rounded-sm my-1'>
