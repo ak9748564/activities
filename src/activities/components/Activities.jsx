@@ -214,7 +214,7 @@ export default function Activities() {
         language === 'English' ?
         <div className='border px-3 rounded-sm my-1'>
             <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Activity Group</p>
-            <p className='text-[14px] leading-[30px] text-blue-700'>{item['Activity Group']}</p>
+            <p className='text-[14px] leading-[30px] text-green-700'>{item['Activity Group']}</p>
         </div> :
         <div className='border px-3 rounded-sm my-1'>
             <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Activity Group (Arabic)</p>
