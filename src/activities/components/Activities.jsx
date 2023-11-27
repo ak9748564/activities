@@ -449,82 +449,82 @@ export default function Activities() {
     
                     <div className='border px-3 rounded-sm my-1'>
                         <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Activity Master: Activity Master Number</p>
-                        <p className='text-[14px] leading-[30px]'>{activity['Activity Master: Activity Master Number']}</p>
+                        <p className='text-[14px] leading-[30px] text-green-600'>{activity['Activity Master: Activity Master Number']}</p>
                     </div>
                     <div className='border px-3 rounded-sm my-1'>
                         <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Zone</p>
-                        <p className='text-[14px] leading-[30px]'>{activity['Zone']}</p>
+                        <p className='text-[14px] leading-[30px] text-green-600'>{activity['Zone']}</p>
                     </div>
                     <div className='border px-3 rounded-sm my-1'>
                         <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Activity Code</p>
-                        <p className='text-[14px] leading-[30px]'>{activity['Activity Code']}</p>
+                        <p className='text-[14px] leading-[30px] text-green-600'>{activity['Activity Code']}</p>
                     </div>
                     {/* Activity Name  */}
                     {
                         language === 'English' ? 
                         <div className='border px-3 rounded-sm my-1'>
                             <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Activity Name</p>
-                            <p className='text-[14px] leading-[30px]'>
+                            <p className='text-[14px] leading-[30px] text-green-600'>
                                 {activity['Activity Name']}
                             </p>
                         </div> :
                         <div className='border px-3 rounded-sm my-1'>
                             <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Activity Name (Arabic)</p>
-                            <p className='text-[14px] leading-[30px]'>
+                            <p className='text-[14px] leading-[30px] text-green-600'>
                                 {activity['Activity Name (Arabic)']}
                             </p>
                         </div>
                     }
                     <div className='border px-3 rounded-sm my-1'>
                         <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Minimum Share Capital</p>
-                        <p className='text-[14px] leading-[30px]'>{activity['Minimum Share Capital']}</p>
+                        <p className='text-[14px] leading-[30px] text-green-600'>{activity['Minimum Share Capital']}</p>
                     </div>
                     {/* License Type  */}
                     {
                         language === 'English' ?
                         <div className='border px-3 rounded-sm my-1'>
                             <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>License Type</p>
-                            <p className='text-[14px] leading-[30px]'>
+                            <p className='text-[14px] leading-[30px] text-green-600'>
                                 {activity['License Type']}
                             </p>
                         </div> :
                         <div className='border px-3 rounded-sm my-1'>
                             <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>License Type (Arabic)</p>
-                            <p className='text-[14px] leading-[30px]'>
+                            <p className='text-[14px] leading-[30px] text-green-600'>
                             {activity['License Type (Arabic)']}
                             </p>
                         </div>
                     }
                     <div className='border px-3 rounded-sm my-1'>
                         <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Is Not Allowed For Coworking (ESR)</p>
-                        <p className='text-[14px] leading-[30px]'>{activity['Is Not Allowed for Coworking(ESR)']}</p>
+                        <p className='text-[14px] leading-[30px] text-green-600'>{activity['Is Not Allowed for Coworking(ESR)']}</p>
                     </div>
                     <div className='border px-3 rounded-sm my-1'>
                         <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>RAKEZ HSE Risk Classification</p>
-                        <p className='text-[14px] leading-[30px]'>{activity['RAKEZ HSE Risk Classification']}</p>
+                        <p className='text-[14px] leading-[30px] text-green-600'>{activity['RAKEZ HSE Risk Classification']}</p>
                     </div>
                     <div className='border px-3 rounded-sm my-1'>
                         <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Compliance Risk Rating</p>
-                        <p className='text-[14px] leading-[30px]'>{activity['Compliance Risk Rating']}</p>
+                        <p className='text-[14px] leading-[30px] text-green-600'>{activity['Compliance Risk Rating']}</p>
                     </div>
                     <div className='border px-3 rounded-sm my-1'>
                         <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Is Special</p>
-                        <p className='text-[14px] leading-[30px]'>{activity['Is Special']}</p>
+                        <p className='text-[14px] leading-[30px] text-green-600'>{activity['Is Special']}</p>
                     </div>
                     <div className='border px-3 rounded-sm my-1'>
                         <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Activity Price</p>
-                        <p className='text-[14px] leading-[30px]'>{activity['Activity Price']}</p>
+                        <p className='text-[14px] leading-[30px] text-green-600'>{activity['Activity Price']}</p>
                     </div>
                     {/* Activity Group  */}
                     {
                         language === 'English' ?
                         <div className='border px-3 rounded-sm my-1'>
                             <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Activity Group</p>
-                            <p className='text-[14px] leading-[30px]'>{activity['Activity Group']}</p>
+                            <p className='text-[14px] leading-[30px] text-green-600'>{activity['Activity Group']}</p>
                         </div> :
                         <div className='border px-3 rounded-sm my-1'>
                             <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Activity Group (Arabic)</p>
-                            <p className='text-[14px] leading-[30px]'>{activity['Activity Group (Arabic)']}</p>
+                            <p className='text-[14px] leading-[30px] text-green-600'>{activity['Activity Group (Arabic)']}</p>
                         </div>
                     }
                     
@@ -533,13 +533,13 @@ export default function Activities() {
                         language === 'English' ? 
                         <div className='border px-3 rounded-sm my-1'>
                             <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Segment Name English</p>
-                            <p className='text-[14px] leading-[30px]'>
+                            <p className='text-[14px] leading-[30px] text-green-600'>
                             {activity['Segment Name English']}
                             </p>
                         </div> :
                         <div className='border px-3 rounded-sm my-1'>
                             <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Segment Name Arabic</p>
-                            <p className='text-[14px] leading-[30px]'>
+                            <p className='text-[14px] leading-[30px] text-green-600'>
                             {activity['Segment Name Arabic']}
                             </p>
                         </div>
@@ -549,24 +549,24 @@ export default function Activities() {
                         language === 'English' ? 
                         <div className='border px-3 rounded-sm my-1'>
                             <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Description</p>
-                            <p className='text-[14px] leading-[30px]'>
+                            <p className='text-[14px] leading-[30px] text-green-600'>
                             {activity['Description']}
                             </p>
                         </div> :
                         <div className='border px-3 rounded-sm my-1'>
                             <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Description Arabic</p>
-                            <p className='text-[14px] leading-[30px]'>
+                            <p className='text-[14px] leading-[30px] text-green-600'>
                             {activity['Description Arabic']}
                             </p>
                         </div>
                     }
                     <div className='border px-3 rounded-sm my-1'>
                         <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Qualification Requirement</p>
-                        <p className='text-[14px] leading-[30px]'>{activity['Qualification Requirement']}</p>
+                        <p className='text-[14px] leading-[30px] text-green-600'>{activity['Qualification Requirement']}</p>
                     </div>
                     <div className='border px-3 rounded-sm my-1'>
                         <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Documents Required</p>
-                        <p className='text-[14px] leading-[30px]'>{activity['Documents Required']}</p>
+                        <p className='text-[14px] leading-[30px] text-green-600'>{activity['Documents Required']}</p>
                     </div>
                     <div className='flex items-center'>
                         <div className='grow shrink h-0 border-b border-dashed'></div>
