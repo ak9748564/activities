@@ -238,7 +238,7 @@ export default function Activities() {
         </div>
     }
     {/* Segment Name  */}
-    {
+{/*     {
         language === 'English' ? 
         <div className='border px-3 rounded-sm my-1'>
             <p className='text-[14px] font-semibold text-[#555] leading-[30px] border-b'>Segment Name English</p>
@@ -252,7 +252,7 @@ export default function Activities() {
             {item['Segment Name Arabic']}
             </p>
         </div>
-    }
+    } */}
     {/* License Type  */}
 {/*     {
         language === 'English' ?
