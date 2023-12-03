@@ -1,4 +1,5 @@
 import React from 'react'
+import { IoSearchOutline } from 'react-icons/io5';
 
 export default function ActivityGroupFilter({
     activityGroup,
@@ -58,7 +59,8 @@ export default function ActivityGroupFilter({
                 </div>
             </div>
         </div>
-        <button className='h-full w-[100px] text-center text-[14px] flex items-center justify-center bg-black text-white rounded-r-sm' onClick={getActivities}>Search</button>      
+       <button className='h-full w-[30px] text-center text-[14px] flex items-center justify-center bg-black text-white rounded-r-sm shrink-0' onClick={getActivities}>
+        <IoSearchOutline className=''/></button>       
     </div>
   )
 }
