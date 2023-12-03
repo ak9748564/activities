@@ -22,6 +22,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Notify from "./test/Notification";
 import Home from "./activities/components/Home";
 import Activities from "./activities/components/Activities";
+import ActivitiesTable from "./activities/components/ActivitiesTable";
 // import Api from "./test/Api";
 
 // import Redux_states_child from "./test/Redux_states_child";
@@ -43,6 +44,7 @@ export default function App() {
           }/>
           {/* <Route path="/" element={<Dashboard/>}/> */}
           <Route path="/" element={<Home/>}/>
+          <Route path="/activities-table" element={<ActivitiesTable/>}/>
           <Route path="/activities-list" element={<Activities/>}/>
           {/* <Route path="/login" element={<Login/>}/>
           <Route path="/queries" element={<Queries/>}/> */}
