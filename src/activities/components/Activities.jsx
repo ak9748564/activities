@@ -80,7 +80,7 @@ export default function Activities() {
 
     const getActivities = () => {
         setLoading(true);
-            axios.get(`${BASE_URL_ACT}/getActivities?searchText=${searchParam}&currentPage=${currentPage-1}&zone=${zone}&licenseType=${licenseType}&isSpecial=${isSpecial}&riskClass=${riskClass}&compRR=${compRR}&activityGroup=${activityGroupSelected}`,{withCredentials:false})
+            axios.get(`${BASE_URL_ACT}/getActivities?searchText=${searchParam.trim()}&currentPage=${currentPage-1}&zone=${zone.trim()}&licenseType=${licenseType.trim()}&isSpecial=${isSpecial.trim()}&riskClass=${riskClass.trim()}&compRR=${compRR.trim()}&activityGroup=${activityGroupSelected.trim()}`,{withCredentials:false})
             .then((res)=>{
                 console.log(res)
                 setI(res?.data?.data.response)
@@ -125,7 +125,7 @@ export default function Activities() {
     React.useEffect(()=>{
         getActivitiesGroup();
         setLoading(true);
-        axios.get(`${BASE_URL_ACT}/getActivities?searchText=${searchParam}&currentPage=${currentPage-1}`,{withCredentials:false})
+        axios.get(`${BASE_URL_ACT}/getActivities?searchText=${searchParam.trim()}&currentPage=${currentPage-1}`,{withCredentials:false})
         .then((res)=>{
             console.log(res)
             setI(res?.data?.data.response)
