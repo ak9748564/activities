@@ -9,6 +9,7 @@ import PageNumbers from '../../components/pagination/Pagenumbers';
 import { CircularProgress } from '@mui/material';
 import ActivityGroupFilter from '../../components/filter/ActivityGroupFilter';
 import { BASE_URL_ACT } from '../../redux/constants';
+import {IoSearchOutline} from 'react-icons/io5'
 
 export default function Activities() {
     //click outside to close
@@ -167,12 +168,14 @@ export default function Activities() {
                     <option>Arabic</option>
                 </select> */}
                 {/* search filter  */}
-                <div className='basis-[200px] flex grow shrink'>
+                <div className='basis-[200px] flex grow shrink h-[30px]'>
                     <SearchFilter />
-                    <button className='bg-black text-white leading-[34px] w-[100px] text-center text-[14px]' onClick={()=>getActivities()}>Search</button>
+                    <button className='bg-black text-white  w-[30px] text-center text-[14px] flex items-center justify-center shrink-0' onClick={()=>getActivities()}>
+                        <IoSearchOutline/>
+                    </button>
                 </div>
                 {/* activity group  */}
-                <div className='h-[32px] w-full border mt-2'>
+                <div className='h-[30px] w-full border mt-2'>
                     <ActivityGroupFilter 
                     activityGroup={activityGroup} 
                     getActivities={getActivities}
