@@ -148,18 +148,24 @@ export default function Activities() {
     <div className='w-full h-full'>
         <div className='w-full h-full'>
             {/* header  */}
-            <div className='flex items-center justify-between pl-3 pr-2 border-b'>
+            <div className='flex items-center justify-between pl-3 pr-[6px] border-b'>
                 <h1 className='text-[20px] leading-[50px]'>Activities List</h1>
-                <button className="flex items-center h-[30px] border rounded-md px-2 text-[14px] bg-white cursor-pointer" onClick={()=>{setFilters(true)}}>
-                    <BiFilterAlt className="text-[17px]"/>
-                </button>
+                <div className='flex items-center gap-[6px]'>
+                    <select name="" id="" value={language} onChange={(e)=>setLanguage(e.target.value)} className='border rounded-sm px-2 h-[40px] w-[100px] cursor-pointer outline-none text-[14px]'>
+                        <option>English</option>
+                        <option>Arabic</option>
+                    </select>
+                    <button className="flex items-center justify-center h-[40px] w-[40px] border rounded-m px-2 text-[14px] bg-white cursor-pointer" onClick={()=>{setFilters(true)}}>
+                        <BiFilterAlt className="text-[17px]"/>
+                    </button>
+                </div>                
             </div>
             <div className='p-2 border-b'>
                 {/* language filter  */}
-                <select name="" id="" value={language} onChange={(e)=>setLanguage(e.target.value)} className='border rounded-sm px-2 h-[40px] cursor-pointer outline-none text-[14px] w-full mb-2'>
+{/*                 <select name="" id="" value={language} onChange={(e)=>setLanguage(e.target.value)} className='border rounded-sm px-2 h-[40px] cursor-pointer outline-none text-[14px] w-full mb-2'>
                     <option>English</option>
                     <option>Arabic</option>
-                </select>
+                </select> */}
                 {/* search filter  */}
                 <div className='basis-[200px] flex grow shrink'>
                     <SearchFilter />
