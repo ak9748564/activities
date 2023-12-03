@@ -181,7 +181,7 @@ export default function Activities() {
                     />
                 </div>
             </div>
-            <div className='shadow-inner h-[calc(100vh-230px)] w-full overflow-y-scroll p-4'>
+            <div className='shadow-inner h-[calc(100vh-182px)] w-full overflow-y-scroll p-4'>
                 {
                     loading ? 
                     <div className='w-full h-full flex items-center justify-center text-[20px]'>
