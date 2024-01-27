@@ -170,7 +170,9 @@ export default function Activities({
                 </select> */}
                 {/* search filter  */}
                 <div className='basis-[200px] flex grow shrink h-[30px]'>
-                    <SearchFilter />
+                    <div className='border border-black/40 w-full'>
+                        <SearchFilter />
+                    </div>
                     <button className='bg-black text-white  w-[30px] text-center text-[14px] flex items-center justify-center shrink-0' onClick={()=>getActivities()}>
                         <IoSearchOutline/>
                     </button>
