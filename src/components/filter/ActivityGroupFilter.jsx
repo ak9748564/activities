@@ -97,7 +97,7 @@ export default function ActivityGroupFilter({position}) {
   //  console.log(activityGroup,activityGroupSelected)
   return (
     <div className="h-full w-full flex">
-      {activityGroup?.loading ? (
+      {activityGroups?.loading ? (
         <p className="h-full px-2 text-[14px] leading-[32px]">
           Loading... Please Wait
         </p>
