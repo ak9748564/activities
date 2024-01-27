@@ -19,7 +19,7 @@ export default function Home({
               <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
             </svg>
           </p>
-          <p className='text-[25px] text-white/80'>Start Your Business in UAE</p>
+          <p className='text-[23px] text-white/80'>Start Your Business in UAE</p>
           {/* <button className='h-[40px] rounded-full w-[200px] leading-[40px] bg-white text-center text-black shadow-xl hover:text-white/90 hover:bg-green-500 transition-all flex items-center justify-center gap-1 mt-6'>
             <Link to='activities-list'>
               See Activities</Link>
