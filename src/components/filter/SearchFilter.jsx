@@ -90,8 +90,8 @@ export default function SearchFilter() {
     },[query])
 
   return (
-    <div className='flex items-center w-full border rounded-sm'>
-        <input type="search" className={`h-[32px]  px-2 outline-none hover:ring-1 cursor-pointer w-full`} placeholder="Search" id="search" onChange={(e)=>setQuery(e.target.value)} ref={queryRef}/>
+    <div className='flex items-center w-full rounded-sm'>
+        <input type="search" className={`h-[28px]  px-2 outline-none hover:ring-1 cursor-pointer w-full`} placeholder="Search" id="search" onChange={(e)=>setQuery(e.target.value)} ref={queryRef}/>
     </div>
   )
 }
