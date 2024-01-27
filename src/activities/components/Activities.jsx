@@ -208,6 +208,9 @@ export default function Activities({
                     <div className='w-full'>
                     {
                         activities?.map((item)=>{
+                            if(
+                                item['Activity Name']?.toLowerCase().includes(searchQuery?.toLowerCase()) || item['Activity Group']?.toLowerCase()?.includes(searchQuery)
+                            )
                             return(
 <div className='w-full border rounded-md shadow-lg bg-white p-4 my-2'>
     
